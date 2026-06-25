@@ -14,7 +14,9 @@ pipeline {
     stages {
         stage('准备构建环境') {
             steps {
-                prepareBuildEnvironment.prepareBuildEnvironment()
+                script {
+                    prepareBuildEnvironment.prepareBuildEnvironment()
+                }
             }
 
         }

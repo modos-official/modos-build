@@ -1,3 +1,6 @@
+
+def prepareBuildEnvironment = load 'lfs-build/_001_prepare.groovy'
+
 pipeline {
     agent {
         docker {
@@ -9,22 +12,17 @@ pipeline {
     }
     
     stages {
-        stage('下载代码') {
+        stage('准备构建环境') {
             steps {
-                sh 'echo "下载代码"'
+                prepareBuildEnvironment.prepareBuildEnvironment()
             }
-        }
 
-        stage('准备软件包') {
-            steps {
-                sh 'ls -l /container/data'
-            }
         }
         
         stage('构建软件包') {
             steps {
                 sh 'echo "构建软件包"'
-                sh 'sleep 20'
+                sh 'sleep 10'
             }
         }
         

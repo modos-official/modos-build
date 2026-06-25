@@ -1,5 +1,4 @@
 
-def prepareBuildEnvironment = load 'lfs-build/_001_prepare.groovy'
 
 pipeline {
     agent {
@@ -15,6 +14,7 @@ pipeline {
         stage('准备构建环境') {
             steps {
                 script {
+                    def prepareBuildEnvironment = load 'lfs-build/_001_prepare.groovy'
                     prepareBuildEnvironment.prepareBuildEnvironment()
                 }
             }

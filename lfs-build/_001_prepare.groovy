@@ -13,5 +13,6 @@ def prepareBuildEnvironment() {
 
         ls -l $LFS/sources
     '''
-    
 }
+
+return this

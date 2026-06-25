@@ -3,7 +3,7 @@
 pipeline {
     agent {
         docker {
-            image 'registry.cn-beijing.aliyuncs.com/modos-official/ubuntu:24.04'
+            image 'registry.cn-beijing.aliyuncs.com/modos-official/ubuntu:lfs-base'
             // 使用 args 添加挂载卷
             // 格式: -v <主机路径>:<容器内路径>
             args '-v /mnt/lfs/sources:/container/data'
